@@ -1,0 +1,17 @@
+<!-- contact_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Detail</title>
+</head>
+<body>
+    <h1>Contact Detail</h1>
+    <p>Name: {{ contact.name }}</p>
+    <p>Email: {{ contact.email }}</p>
+    <p>Phone Number: {{ contact.phone }}</p>
+    <!-- Add other contact details here -->
+    <a href="{% url 'update_contact' pk=contact.pk %}">Edit</a>
+    <a href="{% url 'delete_contact' pk=contact.pk %}">Delete</a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete All Contacts</title>
+</head>
+<body>
+    <h1>Delete All Contacts</h1>
+    <p>Are you sure you want to delete all contacts?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm Delete All">
+    </form>
+</body>
+</html>

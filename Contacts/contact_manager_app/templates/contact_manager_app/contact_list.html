@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact List</title>
+</head>
+<body>
+    <h1>Contact List</h1>
+    {% if contacts %}
+        <ul>
+            {% for contact in contacts %}
+                <li>{{ contact.name }} | <a href="{% url 'get_contact' pk=contact.pk %}">View</a> | <a href="{% url 'update_contact' pk=contact.pk %}">Edit</a> | <a href="{% url 'delete_contact' pk=contact.pk %}">Delete</a></li>
+                <br>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Contacts Found!</p>
+    {% endif %}
+    <a href="{% url 'add_contact' %}">Add New Contact</a>
+    <br>
+    <br>
+    <a href="{% url 'delete_all_contacts' %}">Delete All Contacts</a>
+</body>
+</html>
