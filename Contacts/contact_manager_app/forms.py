@@ -4,4 +4,6 @@ from .models import Contact
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ['name', 'email', 'phone']  # Add more fields as needed
+        fields = ['name', 'email', 'phone']
+
+    email = forms.EmailField(initial='example@gmail.com')
