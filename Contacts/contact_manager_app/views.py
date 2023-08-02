@@ -21,6 +21,7 @@ def add_contact(request):
         form = ContactForm()
 
     return render(request, 'contact_manager_app/add_contact.html', {'form': form})
+
 def update_contact(request, pk):
     contact = get_object_or_404(Contact, pk=pk)
 
@@ -28,7 +29,7 @@ def update_contact(request, pk):
         form = ContactForm(request.POST, instance=contact)
         if form.is_valid():
             form.save()
-            return redirect('contact_detail', pk=contact.pk)  # Use 'contact_detail' here
+            return redirect('get_contact', pk=contact.pk)  # Use 'contact_detail' here
     else:
         form = ContactForm(instance=contact)
 
