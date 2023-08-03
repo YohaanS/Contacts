@@ -7,9 +7,14 @@ def get_contacts(request):
     contacts = Contact.objects.all()
     return render(request, 'contact_manager_app/contact_list.html', {'contacts': contacts})
 
+
 def get_contact(request, pk):
-    contact = get_object_or_404(Contact, pk=pk)
-    return render(request, 'contact_manager_app/contact_detail.html', {'contact': contact})
+    try:
+        contact = Contact.objects.get(pk=pk)
+        return render(request, 'contact_manager_app/contact_detail.html', {'contact': contact})
+    except Contact.DoesNotExist:
+        return render(request, 'contact_manager_app/contact_not_found.html')
+
 
 def add_contact(request):
     if request.method == 'POST':
