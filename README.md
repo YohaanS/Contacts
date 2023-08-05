@@ -17,3 +17,4 @@
 # Backend: Django (Python web framework)
 # Database: SQLite (for local development)
 # Deployment: PythonAnywhere 
+# Usage: Users can access the Contact Manager Web Application through a web browser. They can easily add, update, and delete contacts, as well as manage their contact list efficiently. The application's user-friendly design and intuitive features make it a valuable tool for personal or professional contact management
